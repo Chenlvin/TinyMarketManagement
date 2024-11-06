@@ -1,0 +1,345 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"$locationPolicy": 1
+			"title": "Market Management"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosed", "thisWindowClosed", true ) )
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "thisWindowClosing", true ) )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "HomePage"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Market Management"
+						"font": new java.awt.Font( "Times New Roman", 0, 22 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 125
+						"y": 155
+						"width": 435
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label2"
+						"text": "超市管理系统"
+						"font": new java.awt.Font( "等线", 1, 35 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 115
+						"y": 115
+						"width": 360
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "主页"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "SalePage"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "SaleScrollPane"
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "SaleTable"
+							"model": &SwingTableModel0 new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+								add( "商品编号" )
+								add( "商品名称" )
+								add( "类别" )
+								add( "价格" )
+								add( "库存量" )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							}, new java.util.Vector {
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							"font": &Font0 new java.awt.Font( "楷体", 0, 18 )
+							"autoResizeMode": 4
+							"autoCreateRowSorter": true
+							"background": sfield java.awt.Color gray
+							"fillsViewportHeight": true
+							"minimumSize": &Dimension0 new java.awt.Dimension( 75, 20 )
+							"rowHeight": 30
+							"selectionMode": 1
+							"gridColor": &Color0 new java.awt.Color( 255, 255, 255, 255 )
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 745
+						"height": 405
+						"x": 15
+						"y": 90
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "SaleKeyword"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 180
+						"height": 40
+						"x": 395
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "SaleType"
+						"model": &DefaultComboBoxModel0 new javax.swing.DefaultComboBoxModel {
+							selectedItem: "名称"
+							addElement( "名称" )
+							addElement( "类别" )
+						}
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 78
+						"height": 40
+						"x": 575
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "SaleSearch"
+						"text": "查询"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SaleSearch", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 670
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "SaleAdd"
+						"text": "添加"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SaleAdd", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 785
+						"y": 120
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "SaleDelete"
+						"text": "删除所选"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SaleDelete", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 785
+						"y": 180
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "销售"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "ProductPage"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "ProductScrollPane"
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "ProductTable"
+							"model": #SwingTableModel0
+							"font": #Font0
+							"autoResizeMode": 4
+							"autoCreateRowSorter": true
+							"background": sfield java.awt.Color gray
+							"fillsViewportHeight": true
+							"minimumSize": #Dimension0
+							"rowHeight": 30
+							"selectionMode": 1
+							"gridColor": #Color0
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 15
+						"y": 90
+						"width": 745
+						"height": 405
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "ProductKeyword"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 395
+						"y": 30
+						"width": 180
+						"height": 40
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "ProductType"
+						"model": #DefaultComboBoxModel0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 575
+						"y": 30
+						"height": 40
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "ProductSearch"
+						"text": "查询"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ProductSearch", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 670
+						"y": 30
+						"width": 90
+						"height": 40
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "ProductAdd"
+						"text": "添加"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ProductAdd", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 785
+						"y": 120
+						"height": 40
+						"width": 90
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "ProductDelete"
+						"text": "删除所选"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "ProductDelete", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 785
+						"y": 180
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "商品管理"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+					"autoSize": false
+				} ) {
+					name: "StockPage"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "StockScrollPane"
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "StockTable"
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+								add( "库存编号" )
+								add( "商品名称" )
+								add( "类别" )
+								add( "入库数量" )
+								add( "入库时间" )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							}, new java.util.Vector {
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							"font": #Font0
+							"autoResizeMode": 4
+							"autoCreateRowSorter": true
+							"background": sfield java.awt.Color gray
+							"fillsViewportHeight": true
+							"minimumSize": #Dimension0
+							"rowHeight": 30
+							"selectionMode": 1
+							"gridColor": #Color0
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 745
+						"height": 405
+						"x": 15
+						"y": 90
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "StockKeyword"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 180
+						"height": 40
+						"x": 365
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JComboBox" ) {
+						name: "StockType"
+						"model": new javax.swing.DefaultComboBoxModel {
+							selectedItem: "商品名称"
+							addElement( "商品名称" )
+							addElement( "分类" )
+						}
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 108
+						"height": 40
+						"x": 545
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "StockSearch"
+						"text": "查询"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "StockSearch", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 670
+						"y": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "StockAdd"
+						"text": "添加"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "StockAdd", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 785
+						"y": 120
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "StockDelete"
+						"text": "删除所选"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "StockDelete", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 90
+						"height": 40
+						"x": 785
+						"y": 180
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "库存管理"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 898
+				"height": 547
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu3"
+					"text": "菜单"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "Settings"
+						"text": "设置"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "SettingsMenu", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "About"
+						"text": "关于"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "About", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 900, 600 )
+		} )
+	}
+}

@@ -1,0 +1,102 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
+			"autoSize": false
+		} ) {
+			name: "this"
+			"$locationPolicy": 1
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "AddLabel"
+				"text": "增加入库信息"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 20 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 20
+				"y": 10
+				"width": 180
+				"height": 40
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "nameLabel"
+				"text": "入库商品编号"
+				"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 18 )
+				"horizontalAlignment": 4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 35
+				"y": 95
+				"width": 191
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "typeidLabel"
+				"text": "入库数量"
+				"font": #Font0
+				"horizontalAlignment": 4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 146
+				"height": 24
+				"x": 80
+				"y": 145
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "priceLabel"
+				"text": "入库时间"
+				"font": #Font0
+				"horizontalAlignment": 4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 146
+				"height": 24
+				"x": 80
+				"y": 195
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textfield_pid"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 235
+				"y": 90
+				"width": 160
+				"height": 35
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textfield_quantity"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 160
+				"height": 35
+				"x": 235
+				"y": 140
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textfield_datetime"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 160
+				"height": 35
+				"x": 235
+				"y": 190
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "AddButton"
+				"text": "添加"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "AddButton", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 250
+				"y": 290
+				"height": 40
+				"width": 93
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "GetTimeButton"
+				"text": "获取当前时间"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "GetTime", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 395
+				"y": 190
+				"height": 35
+				"width": 155
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 600, 400 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+	}
+}
