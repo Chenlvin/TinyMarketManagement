@@ -318,6 +318,7 @@ public class MainGUI extends JFrame {
                     //---- StockTable ----
                     StockTable.setModel(new DefaultTableModel(
                         new Object[][] {
+                            {null, null, null, null, null},
                         },
                         new String[] {
                             "\u5e93\u5b58\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u5165\u5e93\u6570\u91cf", "\u5165\u5e93\u65f6\u95f4"
@@ -331,6 +332,12 @@ public class MainGUI extends JFrame {
                             return columnEditable[columnIndex];
                         }
                     });
+                    {
+                        TableColumnModel cm = StockTable.getColumnModel();
+                        cm.getColumn(0).setMaxWidth(100);
+                        cm.getColumn(3).setMaxWidth(100);
+                        cm.getColumn(4).setMinWidth(200);
+                    }
                     StockTable.setFont(new Font("\u6977\u4f53", Font.PLAIN, 18));
                     StockTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
                     StockTable.setAutoCreateRowSorter(true);

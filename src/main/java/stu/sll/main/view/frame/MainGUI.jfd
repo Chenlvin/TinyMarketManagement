@@ -221,7 +221,15 @@ new FormModel {
 						name: "StockScrollPane"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "StockTable"
-							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+								add( new java.util.Vector {
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+								} )
+							}, new java.util.Vector {
 								add( "库存编号" )
 								add( "商品名称" )
 								add( "类别" )
@@ -240,11 +248,11 @@ new FormModel {
 								add( false )
 								add( false )
 							}, new java.util.Vector {
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 100, true ) )
 								add( null )
 								add( null )
-								add( null )
-								add( null )
-								add( null )
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 100, true ) )
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 200, 0, true ) )
 							} )
 							"font": #Font0
 							"autoResizeMode": 4
