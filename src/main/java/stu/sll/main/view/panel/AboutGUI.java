@@ -16,6 +16,8 @@ public class AboutGUI extends JFrame {
     public AboutGUI() {
         initComponents();
         setResizable(false);
+        version.setText("Version:" + VERSION);
+        description.setText(DESCRIPTION);
     }
     private final String VERSION = SysConstant.VERSION + "(" + SysConstant.VER_NUM + ")";
     private final String DESCRIPTION = SysConstant.DESCRIPTION;
@@ -41,7 +43,7 @@ public class AboutGUI extends JFrame {
         separator1.setBounds(0, 50, 530, 10);
 
         //---- version ----
-        version.setText(VERSION);
+        version.setText("Version:" + VERSION);
         version.setHorizontalAlignment(SwingConstants.CENTER);
         contentPane.add(version);
         version.setBounds(0, 70, 525, version.getPreferredSize().height);
