@@ -8,10 +8,9 @@ import javax.swing.*;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.theme
+ * @BelongsPackage: stu.sll.main.common.theme
  * @Author: ZhouChenyi
  * @Description: Theme / 主题设置
- * @Version: 2.0
  */
 
 public class SetTheme {

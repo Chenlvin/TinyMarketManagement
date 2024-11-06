@@ -6,9 +6,7 @@ import org.apache.log4j.Logger;
  * @BelongsProject: MarketManagement
  * @BelongsPackage: stu.sll.main.common.util
  * @Author: ZhouChenyi
- * @CreateTime: 2024-11-06  11:0
  * @Description: LogUtil
- * @Version: 1.0
  */
 
 public class LogUtil {

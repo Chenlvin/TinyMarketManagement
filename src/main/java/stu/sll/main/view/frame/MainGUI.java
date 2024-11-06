@@ -36,7 +36,7 @@ public class MainGUI extends JFrame {
         aboutGUI.setVisible(true);
     }
 
-    private void ProductAdd(ActionEvent e) { new ProductAdd(); }
+    private void ProductAdd(ActionEvent e) { new ProductAdd(ProductTable); }
 
     private void SettingsMenu(ActionEvent e) {
         new DialogMsg("提示","Alpha 测试版本，该功能暂未开发！");
@@ -65,7 +65,7 @@ public class MainGUI extends JFrame {
         new StockSearch((String) StockType.getSelectedItem(), StockKeyword.getText(), StockTable);
     }
 
-    private void StockAdd(ActionEvent e) { new StockAdd(); }
+    private void StockAdd(ActionEvent e) { new StockAdd(StockTable); }
 
     private void SaleSearch(ActionEvent e) {
         // TODO add your code here

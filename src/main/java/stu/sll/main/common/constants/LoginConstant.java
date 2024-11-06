@@ -2,10 +2,9 @@ package stu.sll.main.common.constants;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.constants
+ * @BelongsPackage: stu.sll.main.common.constants
  * @Author: ZhouChenyi
  * @Description: Constant for login / 登录系统常量
- * @Version: 1.0
  */
 
 public class LoginConstant {

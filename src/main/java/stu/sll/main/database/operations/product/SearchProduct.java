@@ -12,10 +12,9 @@ import java.util.List;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.database.operations
+ * @BelongsPackage: stu.sll.main.common.database.operations
  * @Author: ZhouChenyi
- * @Description: Search // 查找功能
- * @Version: 1.4
+ * @Description: Search Product
  */
 
 public class SearchProduct {

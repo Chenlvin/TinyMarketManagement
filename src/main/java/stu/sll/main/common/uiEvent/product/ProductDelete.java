@@ -12,7 +12,6 @@ import java.sql.SQLException;
  * @BelongsPackage: stu.sll.main.common.uiEvent.product
  * @Author: ZhouChenyi
  * @Description: Product Deelete
- * @Version: 1.0
  */
 
 public class ProductDelete {
@@ -24,6 +23,7 @@ public class ProductDelete {
             int selectedPid = (int) ProductTable.getValueAt(row, 0);
             try {
                 DeleteProduct.deleteProduct(selectedPid);
+                new ProductSearch("名称", "", ProductTable);
             } catch (SQLException ex) {
                 new DialogErr(ex.getMessage());
             }

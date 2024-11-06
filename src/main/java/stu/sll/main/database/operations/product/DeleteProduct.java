@@ -10,10 +10,9 @@ import java.sql.SQLException;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.database.operations
+ * @BelongsPackage: stu.sll.main.common.database.operations
  * @Author: ZhouChenyi
  * @Description: Delete Product
- * @Version: 1.0
  */
 
 public class DeleteProduct {

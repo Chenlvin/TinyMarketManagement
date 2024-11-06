@@ -5,10 +5,9 @@ import stu.sll.main.common.util.LogUtil;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.service
+ * @BelongsPackage: stu.sll.main.common.service
  * @Author: ZhouChenyi
  * @Description: 关闭程序
- * @Version: 1.0
  */
 
 public class StopService {

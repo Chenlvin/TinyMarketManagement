@@ -4,10 +4,9 @@ import javax.swing.*;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.dialog
+ * @BelongsPackage: stu.sll.main.common.dialog
  * @Author: ZhouChenyi
  * @Description: Message dialog / 消息弹窗
- * @Version: 1.0
  */
 
 public class DialogMsg {

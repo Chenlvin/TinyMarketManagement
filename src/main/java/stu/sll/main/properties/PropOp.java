@@ -9,11 +9,9 @@ import java.util.Properties;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.properties
+ * @BelongsPackage: stu.sll.main.properties
  * @Author: ZhouChenyi
- * @CreateTime: 2024-10-31  18:15
- * @Description: TODO
- * @Version: 1.0
+ * @Description: Properties Operation
  */
 
 public class PropOp {

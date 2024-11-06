@@ -4,10 +4,9 @@ import javax.swing.*;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.dialog
+ * @BelongsPackage: stu.sll.main.common.dialog
  * @Author: ZhouChenyi
  * @Description: Error dialog / 错误提示框
- * @Version: 1.1
  */
 
 public class DialogErr {

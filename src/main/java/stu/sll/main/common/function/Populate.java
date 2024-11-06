@@ -6,10 +6,9 @@ import java.util.List;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.database.operations
+ * @BelongsPackage: stu.sll.main.common.database.operations
  * @Author: ZhouChenyi
  * @Description: 将List信息添加到JList
- * @Version: 1.0
  */
 
 public class Populate {

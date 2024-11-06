@@ -2,19 +2,19 @@ package stu.sll.main.common.uiEvent.product;
 
 import stu.sll.main.view.panel.ProductAddGUI;
 
+import javax.swing.*;
+
 /**
  * @BelongsProject: MarketManagement
  * @BelongsPackage: stu.sll.main.common.uiEvent.product
  * @Author: ZhouChenyi
- * @CreateTime: 2024-11-05  16:30
  * @Description: TODO
- * @Version: 1.0
  */
 
 public class ProductAdd {
-    public ProductAdd() {
+    public ProductAdd(JTable productTable) {
         // ProductAddGUI 添加商品方法需要打开 ProductAddGUI GUI
-        ProductAddGUI productAddGUI = new ProductAddGUI();
+        ProductAddGUI productAddGUI = new ProductAddGUI(productTable);
         productAddGUI.setVisible(true);
     }
 }

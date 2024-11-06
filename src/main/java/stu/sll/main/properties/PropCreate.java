@@ -1,11 +1,10 @@
 package stu.sll.main.properties;
 
-/*
+/**
  * @BelongsProject: Market
- * @BelongsPackage: main.properties
+ * @BelongsPackage: stu.sll.main.properties
  * @Author: ZhouChenyi
  * @Description: 创建新的 settings.main.properties
- * @Version: 1.0
  */
 
 import stu.sll.main.common.util.LogUtil;
