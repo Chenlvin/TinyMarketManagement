@@ -1,6 +1,7 @@
 package stu.sll.main.database.operations.stock;
 
 import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
 
@@ -52,7 +53,7 @@ public class SearchStock {
                 stockList.add(new Object[]{stockId, productName, typeName, stockQuantity, stockTime});
             }
         } catch (SQLException ex) {
-            System.err.println("SearchStock 时出错：" + ex.getMessage());
+            LogUtil.error("SearchStock 时出错：" + ex.getMessage());
             new DialogErr("查找时出错，错误信息：" + ex.getMessage());
         }
         return stockList;

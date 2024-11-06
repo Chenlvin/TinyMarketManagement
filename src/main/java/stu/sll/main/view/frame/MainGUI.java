@@ -10,6 +10,7 @@ import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.service.StopService;
 import stu.sll.main.common.uiEvent.product.*;
 import stu.sll.main.common.uiEvent.stock.*;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.view.panel.AboutGUI;
 
 import java.awt.*;
@@ -21,6 +22,7 @@ import javax.swing.*;
  */
 public class MainGUI extends JFrame {
     public MainGUI() {
+        LogUtil.info("启动主界面 MainGUI");
         initComponents();
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setResizable(false);
@@ -46,7 +48,7 @@ public class MainGUI extends JFrame {
                 "提示", JOptionPane.YES_NO_OPTION,
                 JOptionPane.INFORMATION_MESSAGE);
         if(JOptionPane.YES_OPTION == flag){
-            System.out.println("用户点击确认关闭按钮，执行关闭指令");
+            LogUtil.info("用户点击确认关闭按钮，执行关闭指令");
             MainGUI.this.dispose();
         }
     }
@@ -74,7 +76,7 @@ public class MainGUI extends JFrame {
     }
 
     private void StockDelete(ActionEvent e) {
-        // TODO add your code here
+        new StockDelete(StockTable.getSelectedRow(), StockTable);
     }
 
     private void SaleDelete(ActionEvent e) {

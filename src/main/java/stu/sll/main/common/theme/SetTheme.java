@@ -2,6 +2,7 @@ package stu.sll.main.common.theme;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import stu.sll.main.common.util.LogUtil;
 
 import javax.swing.*;
 
@@ -15,6 +16,7 @@ import javax.swing.*;
 
 public class SetTheme {
     public SetTheme(int code) throws Exception {
+        LogUtil.info("开始读取主题设置");
         InitTheme(code);
     }
 
@@ -29,6 +31,7 @@ public class SetTheme {
                     UIManager.setLookAndFeel(new FlatDarkLaf());
             }
         } catch( Exception ex ) {
+            LogUtil.error(ex.getMessage());
             throw new Exception("加载Theme失败：Failed to initialize LaF");
         }
     }

@@ -1,6 +1,8 @@
 package stu.sll.main.properties;
 
 import stu.sll.main.common.constants.SqlConstant;
+import stu.sll.main.common.util.LogUtil;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -25,11 +27,11 @@ public class PropOp {
             SqlConstant.setSqlUser(properties.getProperty("login_username"));
             SqlConstant.setSqlPwd(properties.getProperty("login_password"));
 
-            System.out.println("settings.main.properties 读取完成");
+            LogUtil.info("settings.main.properties 读取完成");
             return true;
         } catch (IOException e) {
-            System.err.println("读取配置文件失败：" + e.getMessage());
-            System.out.println("--- 请查看 settings.main.properties 是否配置正确 ---");
+            LogUtil.error("读取配置文件失败：" + e.getMessage());
+            LogUtil.info("--- 请查看 settings.main.properties 是否配置正确 ---");
             return false;
         }
     }

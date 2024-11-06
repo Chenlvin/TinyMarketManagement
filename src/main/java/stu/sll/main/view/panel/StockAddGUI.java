@@ -7,6 +7,7 @@ package stu.sll.main.view.panel;
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.uiEvent.stock.StockAdd;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;
 import stu.sll.main.database.operations.stock.AddStock;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
@@ -41,7 +42,7 @@ public class StockAddGUI extends JFrame {
             int pid = Integer.parseInt(textfield_pid.getText());
             int quantity = Integer.parseInt(textfield_quantity.getText());
             Timestamp datetime = textfield_datetime.getText().trim().isEmpty() ? null : Timestamp.valueOf(textfield_datetime.getText().trim());
-            System.out.println("添加入库信息：" + pid + "\t" + quantity + "\t" + datetime);
+            LogUtil.info("添加入库信息：" + pid + "\t" + quantity + "\t" + datetime);
             boolean succ = false;
             succ = AddStock.addStock(pid, quantity, datetime);
             if (succ) {

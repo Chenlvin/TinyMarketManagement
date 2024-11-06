@@ -9,6 +9,7 @@ package stu.sll.main.properties;
  */
 
 import stu.sll.main.common.constants.Constant;
+import stu.sll.main.common.util.LogUtil;
 
 import java.io.File;
 
@@ -18,10 +19,10 @@ public class PropCheck {
         File propertiesFile = new File(fileName);
 
         if (propertiesFile.exists()) {
-            System.out.println(fileName + "成功找到配置文件，开始读取...");
+            LogUtil.info("成功找到配置文件 " + fileName + " , 开始读取");
             return PropOp.readProperties(fileName);
         } else {
-            System.out.println("未找到配置文件，尝试创建新的配置文件...");
+            LogUtil.info("未找到配置文件，尝试创建新的配置文件");
             return PropCreate.createPropertiesFile(fileName);
         }
     }

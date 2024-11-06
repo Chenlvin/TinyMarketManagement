@@ -6,6 +6,7 @@ package stu.sll.main.view.frame;
 
 import stu.sll.main.common.constants.LoginConstant;
 import stu.sll.main.common.login.Login;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.DBLogin;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
 
@@ -24,7 +25,7 @@ public class LoginGUI extends JFrame {
 
     // Login 按钮监听器
     private void Login(ActionEvent e) throws SQLException {
-        System.out.println("登录按钮被点击，开始执行登录操作...");
+        LogUtil.info("登录按钮被点击，开始执行登录操作...");
 
         String username = usernamelabel.getText();
         String password = new String(passwordlabel.getPassword());

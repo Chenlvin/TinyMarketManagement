@@ -2,6 +2,8 @@ package stu.sll.main.database.connection;
 
 import stu.sll.main.common.constants.ErrorMessage;
 import stu.sll.main.common.constants.SqlConstant;
+import stu.sll.main.common.util.LogUtil;
+
 import java.sql.*;
 
 /**
@@ -17,19 +19,19 @@ public class SQLConnection {
         // 加载驱动
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.println("<JDBC Driver> 成功加载MySQL驱动");
+            LogUtil.info("<JDBC Driver> 成功加载MySQL驱动");
         } catch (ClassNotFoundException ex) {
-            System.err.println("<JDBC Driver> 加载MySQL驱动出错：" + ex.getMessage());
+            LogUtil.error("<JDBC Driver> 加载MySQL驱动出错：" + ex.getMessage());
             throw new SQLException(ex.getMessage());
         }
 
         // 连接数据库
         try {
             DriverManager.getConnection(SqlConstant.getSqlUrl(), SqlConstant.getSqlUser(), SqlConstant.getSqlPwd());
-            System.out.println("<Connection> 成功与数据库建立连接");
+            LogUtil.info("<Connection> 成功与数据库建立连接");
             return true;
         } catch (SQLException e) {
-            System.err.println("<Connection> 连接数据库时出错：" + e.getMessage());
+            LogUtil.error("<Connection> 连接数据库时出错：" + e.getMessage());
             throw new SQLException(ErrorMessage.SQL_CONNECT_ERROR);
         }
     }
@@ -42,9 +44,9 @@ public class SQLConnection {
             if (conn != null) {
                 conn.close(); // 关闭连接
             }
-            System.out.println("成功关闭数据库连接");
+            LogUtil.info("成功关闭数据库连接");
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+            LogUtil.error(ex.getMessage());
         }
     }
 

@@ -1,5 +1,6 @@
 package stu.sll.main.database.operations.stock;
 
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
 import java.sql.*;
@@ -27,13 +28,13 @@ public class AddStock {
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                System.out.println("成功添加入库信息");
+                LogUtil.info("成功添加入库信息");
                 return true;
             } else {
                 throw new SQLException("0 条数据受影响");
             }
         } catch (SQLException ex) {
-            System.err.println("添加入库信息时出错：" + ex.getMessage());
+            LogUtil.error("添加入库信息时出错：" + ex.getMessage());
             throw new SQLException(ex.getMessage());
         }
     }

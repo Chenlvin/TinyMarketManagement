@@ -1,0 +1,63 @@
+package stu.sll.main.common.util;
+
+import org.apache.log4j.Logger;
+
+/**
+ * @BelongsProject: MarketManagement
+ * @BelongsPackage: stu.sll.main.common.util
+ * @Author: ZhouChenyi
+ * @CreateTime: 2024-11-06  11:0
+ * @Description: LogUtil
+ * @Version: 1.0
+ */
+
+public class LogUtil {
+    public static void trace(String msg) {
+        getLogger().trace(msg);
+    }
+
+    public static void debug(String msg) {
+        getLogger().debug(msg);
+    }
+
+    public static void info(String msg) {
+        getLogger().info(msg);
+    }
+
+    public static void warn(String msg) {
+        getLogger().warn(msg);
+    }
+
+    public static void error(String msg) {
+        getLogger().error(msg);
+    }
+
+    public static void error(String msg,Throwable t) {
+        getLogger().error(msg,t);
+    }
+
+    private static Logger getLogger() {
+        return Logger.getLogger(findCaller().getClassName());
+    }
+
+    private static StackTraceElement findCaller() {
+        // 获取堆栈信息
+        StackTraceElement[] callStack = Thread.currentThread().getStackTrace();
+
+        // 最原始被调用的堆栈信息
+        StackTraceElement caller = null;
+
+        // 日志类名称
+        String logClassName = LogUtil.class.getName();
+
+        // 循环遍历到日志类标识
+        int i = 0;
+        for (int len = callStack.length; i < len; i++) {
+            if (logClassName.equals(callStack[i].getClassName())) {
+                break;
+            }
+        }
+        caller = callStack[i + 3];
+        return caller;
+    }
+}

@@ -8,6 +8,8 @@ package stu.sll.main.properties;
  * @Version: 1.0
  */
 
+import stu.sll.main.common.util.LogUtil;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -33,10 +35,10 @@ public class PropCreate {
 
         try (FileOutputStream output = new FileOutputStream(fileName)) {
             properties.store(output, "Settings File");
-            System.out.println("成功创建配置文件 " + fileName);
+            LogUtil.info("成功创建配置文件 " + fileName);
             return true;
         } catch (IOException e) {
-            System.err.println("创建配置文件时出错：" + e.getMessage());
+            LogUtil.error("创建配置文件时出错：" + e.getMessage());
             return false;
         }
     }

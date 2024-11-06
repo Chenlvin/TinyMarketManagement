@@ -1,6 +1,7 @@
 package stu.sll.main;
 
 import stu.sll.main.common.theme.SetTheme;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 import stu.sll.main.properties.PropCheck;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
@@ -30,18 +31,15 @@ public class Main {
 //                while(!Login.getIsLogged()) {
 //                    Thread.sleep(100);
 //                }
-
-                // 设置主题
-                System.out.println("读取主题设置");
-                new SetTheme(0);
+                // 主题设置
+                new SetTheme(1);
                 // 启动 MainGUI
-                System.out.println("启动主界面");
                 MainGUI mainGui = new MainGUI();
                 mainGui.setVisible(true);
             }
 
         } catch (Exception ex) {
-            System.err.println("Error Catched By Main -> " + ex.getMessage());
+            LogUtil.error("Error Catched By Main -> " + ex.getMessage());
             ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI(ex.getMessage());
             errorDialogGUI.setVisible(true);
         }

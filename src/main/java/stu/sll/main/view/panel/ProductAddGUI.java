@@ -6,6 +6,7 @@ package stu.sll.main.view.panel;
 
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
 
@@ -31,7 +32,7 @@ public class ProductAddGUI extends JFrame {
             String pname = textlabel_name.getText();
             int typeid = Integer.parseInt(textlabel_typeid.getText());
             double price = Double.parseDouble(textlabel_price.getText());
-            System.out.println("添加商品：" + pname + "\t" + typeid + "\t" + price);
+            LogUtil.info("添加商品：" + pname + "\t" + typeid + "\t" + price);
             boolean succ = false;
             succ = AddProduct.addProduct(pname, typeid, price);
             if (succ) {
