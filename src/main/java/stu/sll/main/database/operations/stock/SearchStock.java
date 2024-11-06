@@ -27,13 +27,13 @@ public class SearchStock {
         if (searchType.equals("商品名称")) {
             query = "SELECT s.Stock_id, p.Product_name, t.Type_name, s.Stock_quantity, s.Stock_time " +
                     "FROM stock s " +
-                    "LEFT JOIN Product p ON s.Pid = p.Pid " +
+                    "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
                     "WHERE p.Product_name LIKE ?";
         } else { // "商品类别"
             query = "SELECT s.Stock_id, p.Product_name, t.Type_name, s.Stock_quantity, s.Stock_time " +
                     "FROM stock s " +
-                    "LEFT JOIN Product p ON s.Pid = p.Pid " +
+                    "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
                     "WHERE t.Type_id LIKE ?";
         }
@@ -49,8 +49,6 @@ public class SearchStock {
                 String typeName = rs.getString("Type_name");
                 int stockQuantity = rs.getInt("Stock_quantity");
                 Timestamp stockTime = rs.getTimestamp("Stock_time");
-
-                // 将每条记录封装为一个对象数组并加入列表
                 stockList.add(new Object[]{stockId, productName, typeName, stockQuantity, stockTime});
             }
         } catch (SQLException ex) {
