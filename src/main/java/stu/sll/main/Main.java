@@ -1,5 +1,6 @@
 package stu.sll.main;
 
+import org.apache.log4j.PropertyConfigurator;
 import stu.sll.main.common.theme.SetTheme;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
@@ -19,6 +20,7 @@ import stu.sll.main.view.frame.MainGUI;
 public class Main {
     public static void main(String[] args) throws Exception {
         try {
+            PropertyConfigurator.configure("src/log4j.properties");
             boolean sqlconnection = false;
             boolean propcheck = PropCheck.PropCheck();
             sqlconnection = SQLConnection.databaseConnect();
