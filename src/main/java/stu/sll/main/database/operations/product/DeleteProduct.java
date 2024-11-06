@@ -1,6 +1,5 @@
 package stu.sll.main.database.operations.product;
 
-import com.mysql.cj.log.Log;
 import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;

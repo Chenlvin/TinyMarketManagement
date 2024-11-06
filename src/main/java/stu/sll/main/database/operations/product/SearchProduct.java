@@ -3,7 +3,6 @@ package stu.sll.main.database.operations.product;
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
-import stu.sll.main.view.dialog.ErrorDialogGUI;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,14 +24,14 @@ public class SearchProduct {
         String query;
 
         if (searchType.equals("名称")) {
-            query = "SELECT p.Pid, p.Product_name, t.Type_name, p.Price, COALESCE(SUM(s.Stock_quantity), 0) AS Total_Stock " +
+            query = "SELECT p.Pid, p.Product_Name, t.Type_Name, p.Price, p.Stock_Left " +
                     "FROM Product p " +
                     "LEFT JOIN Stock s ON p.Pid = s.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
                     "WHERE p.Product_name LIKE ? " +
                     "GROUP BY p.Pid";
         } else { // "类别"
-            query = "SELECT p.Pid, p.Product_name, t.Type_name, p.Price, COALESCE(SUM(s.Stock_quantity), 0) AS Total_Stock " +
+            query = "SELECT p.Pid, p.Product_name, t.Type_name, p.Price, p.Stock_Left " +
                     "FROM Product p " +
                     "LEFT JOIN Stock s ON p.Pid = s.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
@@ -49,8 +48,8 @@ public class SearchProduct {
                 String productName = rs.getString("Product_name");
                 String typeName = rs.getString("Type_name");
                 double price = rs.getDouble("Price");
-                int totalStock = rs.getInt("Total_Stock");
-                productList.add(new Object[]{productId, productName, typeName, price, totalStock});
+                int stockLeft = rs.getInt("Stock_Left");
+                productList.add(new Object[]{productId, productName, typeName, price, stockLeft});
             }
         } catch (SQLException ex) {
             LogUtil.error("Search 时出错：" + ex.getMessage());
