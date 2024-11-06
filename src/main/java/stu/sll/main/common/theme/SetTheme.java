@@ -1,7 +1,7 @@
 package stu.sll.main.common.theme;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 import stu.sll.main.common.util.LogUtil;
 
 import javax.swing.*;
@@ -24,11 +24,15 @@ public class SetTheme {
         try {
             switch(code) {
                 case 0:
-                    FlatLightLaf.setup();
-                    UIManager.setLookAndFeel(new FlatLightLaf());
+                    FlatIntelliJLaf.setup();
+                    LogUtil.info("Setup theme - FlatIntelliJLaf");
+                    UIManager.setLookAndFeel(new FlatIntelliJLaf());
+                    break;
                 case 1:
                     FlatDarkLaf.setup();
+                    LogUtil.info("Setup theme - FlatDarkLaf");
                     UIManager.setLookAndFeel(new FlatDarkLaf());
+                    break;
             }
         } catch( Exception ex ) {
             LogUtil.error(ex.getMessage());

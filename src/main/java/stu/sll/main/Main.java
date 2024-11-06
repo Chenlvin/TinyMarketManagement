@@ -21,6 +21,10 @@ public class Main {
     public static void main(String[] args) throws Exception {
         try {
             PropertyConfigurator.configure("src/log4j.properties");
+
+            // 主题设置
+            new SetTheme(0);
+
             boolean sqlconnection = false;
             boolean propcheck = PropCheck.PropCheck();
             sqlconnection = SQLConnection.databaseConnect();
@@ -33,8 +37,7 @@ public class Main {
 //                while(!Login.getIsLogged()) {
 //                    Thread.sleep(100);
 //                }
-                // 主题设置
-                new SetTheme(1);
+
                 // 启动 MainGUI
                 MainGUI mainGui = new MainGUI();
                 mainGui.setVisible(true);
