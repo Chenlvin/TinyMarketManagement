@@ -41,13 +41,13 @@ public class AboutGUI extends JFrame {
         separator1.setBounds(0, 50, 530, 10);
 
         //---- version ----
-        version.setText("Version");
+        version.setText(VERSION);
         version.setHorizontalAlignment(SwingConstants.CENTER);
         contentPane.add(version);
         version.setBounds(0, 70, 525, version.getPreferredSize().height);
 
         //---- description ----
-        description.setText("text");
+        description.setText(DESCRIPTION);
         description.setHorizontalAlignment(SwingConstants.CENTER);
         contentPane.add(description);
         description.setBounds(0, 100, 525, description.getPreferredSize().height);

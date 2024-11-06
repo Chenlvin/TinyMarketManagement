@@ -102,6 +102,7 @@ public class MainGUI extends JFrame {
         SaleSearch = new JButton();
         SaleAdd = new JButton();
         SaleDelete = new JButton();
+        label3 = new JLabel();
         ProductPage = new JPanel();
         ProductScrollPane = new JScrollPane();
         ProductTable = new JTable();
@@ -240,8 +241,14 @@ public class MainGUI extends JFrame {
                 SaleDelete.addActionListener(e -> SaleDelete(e));
                 SalePage.add(SaleDelete);
                 SaleDelete.setBounds(785, 180, 90, 40);
+
+                //---- label3 ----
+                label3.setText("\u5c1a\u672a\u5f00\u53d1");
+                label3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 28));
+                SalePage.add(label3);
+                label3.setBounds(70, 25, 220, label3.getPreferredSize().height);
             }
-            tabbedPane1.addTab("\u9500\u552e", SalePage);
+            tabbedPane1.addTab("\u9500\u552e\uff08\u672a\u5f00\u53d1\uff09", SalePage);
 
             //======== ProductPage ========
             {
@@ -423,6 +430,7 @@ public class MainGUI extends JFrame {
     private JButton SaleSearch;
     private JButton SaleAdd;
     private JButton SaleDelete;
+    private JLabel label3;
     private JPanel ProductPage;
     private JScrollPane ProductScrollPane;
     private JTable ProductTable;

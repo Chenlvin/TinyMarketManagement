@@ -136,8 +136,17 @@ new FormModel {
 						"x": 785
 						"y": 180
 					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label3"
+						"text": "尚未开发"
+						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 28 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 70
+						"y": 25
+						"width": 220
+					} )
 				}, new FormLayoutConstraints( null ) {
-					"title": "销售"
+					"title": "销售（未开发）"
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
 					"autoSize": false
