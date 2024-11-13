@@ -6,6 +6,7 @@ package stu.sll.main.view.panel;
 
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.uiEvent.product.ProductSearch;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;
 import stu.sll.main.view.dialog.ErrorDialogGUI;
@@ -18,7 +19,9 @@ import javax.swing.*;
  * @author Zhou Chenlvin
  */
 public class ProductAddGUI extends JFrame {
-    public ProductAddGUI() {
+    JTable productTable;
+    public ProductAddGUI(JTable productTable) {
+        this.productTable = productTable;
         initComponents();
         setResizable(false);
     }
@@ -38,7 +41,12 @@ public class ProductAddGUI extends JFrame {
             if (succ) {
                 this.setVisible(false);
                 this.removeAll();
+
+                // 刷新 ProductTable
+                new ProductSearch("名称", "", productTable);
+
                 new DialogMsg("提示", "添加成功");
+
             }
         } catch (Exception ex) {
             ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI("添加商品时出错：" + ex.getMessage());

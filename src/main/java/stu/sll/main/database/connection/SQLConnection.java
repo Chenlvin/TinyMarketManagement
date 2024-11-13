@@ -8,10 +8,9 @@ import java.sql.*;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.database
+ * @BelongsPackage: stu.sll.main.common.database
  * @Author: ZhouChenyi
  * @Description: 数据库连接
- * @Version: 1.1
  */
 
 public class SQLConnection {

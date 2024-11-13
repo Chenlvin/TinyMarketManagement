@@ -5,7 +5,6 @@ package stu.sll.main.common.constants;
  * @BelongsPackage: main.common.constants
  * @Author: ZhouChenyi
  * @Description: Error messages / 发生错误时抛出的异常信息
- * @Version: 1.0
  */
 
 public class ErrorMessage {

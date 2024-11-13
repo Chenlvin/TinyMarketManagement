@@ -4,10 +4,9 @@ import stu.sll.main.view.frame.LoginGUI;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.login
+ * @BelongsPackage: stu.sll.main.common.login
  * @Author: ZhouChenyi
  * @Description: Login / 登录功能
- * @Version: 1.1
  */
 
 public class Login {

@@ -11,11 +11,9 @@ import java.util.List;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.uiEvent.product
+ * @BelongsPackage: stu.sll.main.common.uiEvent.product
  * @Author: ZhouChenyi
- * @CreateTime: 2024-11-04  17:04
  * @Description: Product Search
- * @Version: 1.0
  */
 
 public class ProductSearch {

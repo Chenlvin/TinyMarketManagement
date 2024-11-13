@@ -25,7 +25,7 @@ public class LoginGUI extends JFrame {
 
     // Login 按钮监听器
     private void Login(ActionEvent e) throws SQLException {
-        LogUtil.info("登录按钮被点击，开始执行登录操作...");
+        LogUtil.info("尝试登录: Username=" + usernamelabel.getText());
 
         String username = usernamelabel.getText();
         String password = new String(passwordlabel.getPassword());
@@ -35,6 +35,7 @@ public class LoginGUI extends JFrame {
                 LoginConstant.setUsername(username);
                 LoginConstant.setPassword(password);
                 Login.setIsLogged(true);
+                this.setVisible(false);
             } else {
                 ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI("登录失败：用户名或密码不正确。");
                 errorDialogGUI.setVisible(true);

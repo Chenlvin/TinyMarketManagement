@@ -7,10 +7,9 @@ import java.sql.*;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.common.database.operations
+ * @BelongsPackage: stu.sll.main.common.database.operations
  * @Author: ZhouChenyi
- * @Description: TODO
- * @Version: 1.1
+ * @Description: Login - Database operation
  */
 
 public class DBLogin {

@@ -6,7 +6,9 @@ package stu.sll.main.view.panel;
 
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.uiEvent.product.ProductSearch;
 import stu.sll.main.common.uiEvent.stock.StockAdd;
+import stu.sll.main.common.uiEvent.stock.StockSearch;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;
 import stu.sll.main.database.operations.stock.AddStock;
@@ -26,9 +28,11 @@ import javax.swing.border.*;
 public class StockAddGUI extends JFrame {
     // 定义时间格式
     SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    JTable StockTable;
 
-    public StockAddGUI() {
+    public StockAddGUI(JTable StockTable) {
         initComponents();
+        this.StockTable = StockTable;
         String currentTime = dateformat.format(new Timestamp(System.currentTimeMillis()));
         textfield_datetime.setText(currentTime);
     }
@@ -48,6 +52,7 @@ public class StockAddGUI extends JFrame {
             if (succ) {
                 this.setVisible(false);
                 this.removeAll();
+                new StockSearch("名称", "", StockTable);
                 new DialogMsg("提示", "添加成功");
             }
         } catch (Exception ex) {

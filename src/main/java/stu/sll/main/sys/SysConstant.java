@@ -2,10 +2,9 @@ package stu.sll.main.sys;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.sys
+ * @BelongsPackage: stu.sll.main.sys
  * @Author: ZhouChenyi
- * @Description: System Constant / 软件系统信息
- * @Version: 1.0
+ * @Description: System Constants
  */
 
 public class SysConstant {

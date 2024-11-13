@@ -9,10 +9,9 @@ import java.sql.SQLException;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.database.operations
+ * @BelongsPackage: stu.sll.main.common.database.operations
  * @Author: ZhouChenyi
  * @Description: Add Product to product
- * @Version: 1.3
  */
 
 public class AddProduct {

@@ -2,10 +2,9 @@ package stu.sll.main.properties;
 
 /**
  * @BelongsProject: Market
- * @BelongsPackage: main.properties
+ * @BelongsPackage: stu.sll.main.properties
  * @Author: ZhouChenyi
  * @Description: 检查 settings.main.properties 是否存在
- * @Version: 1.0
  */
 
 import stu.sll.main.common.constants.Constant;
