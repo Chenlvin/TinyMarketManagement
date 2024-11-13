@@ -9,6 +9,7 @@ import javax.swing.table.*;
 import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.service.StopService;
 import stu.sll.main.common.uiEvent.product.*;
+import stu.sll.main.common.uiEvent.sale.SaleSearch;
 import stu.sll.main.common.uiEvent.stock.*;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.view.panel.AboutGUI;
@@ -68,7 +69,7 @@ public class MainGUI extends JFrame {
     private void StockAdd(ActionEvent e) { new StockAdd(); }
 
     private void SaleSearch(ActionEvent e) {
-        // TODO add your code here
+        new SaleSearch((String) SaleType.getSelectedItem(), SaleKeyword.getText(), SaleTable);
     }
 
     private void SaleAdd(ActionEvent e) {
@@ -102,7 +103,6 @@ public class MainGUI extends JFrame {
         SaleSearch = new JButton();
         SaleAdd = new JButton();
         SaleDelete = new JButton();
-        label3 = new JLabel();
         ProductPage = new JPanel();
         ProductScrollPane = new JScrollPane();
         ProductTable = new JTable();
@@ -189,17 +189,24 @@ public class MainGUI extends JFrame {
                         new Object[][] {
                         },
                         new String[] {
-                            "\u5546\u54c1\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u4ef7\u683c", "\u5e93\u5b58\u91cf"
+                            "\u8ba2\u5355\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u5355\u4ef7", "\u9500\u552e\u6570\u91cf", "\u9500\u552e\u65f6\u95f4"
                         }
                     ) {
                         boolean[] columnEditable = new boolean[] {
-                            false, false, false, false, false
+                            false, false, false, false, false, true
                         };
                         @Override
                         public boolean isCellEditable(int rowIndex, int columnIndex) {
                             return columnEditable[columnIndex];
                         }
                     });
+                    {
+                        TableColumnModel cm = SaleTable.getColumnModel();
+                        cm.getColumn(0).setMaxWidth(80);
+                        cm.getColumn(3).setMaxWidth(80);
+                        cm.getColumn(4).setMaxWidth(80);
+                        cm.getColumn(5).setMinWidth(150);
+                    }
                     SaleTable.setFont(new Font("\u6977\u4f53", Font.PLAIN, 18));
                     SaleTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
                     SaleTable.setAutoCreateRowSorter(true);
@@ -241,14 +248,8 @@ public class MainGUI extends JFrame {
                 SaleDelete.addActionListener(e -> SaleDelete(e));
                 SalePage.add(SaleDelete);
                 SaleDelete.setBounds(785, 180, 90, 40);
-
-                //---- label3 ----
-                label3.setText("\u5c1a\u672a\u5f00\u53d1");
-                label3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 28));
-                SalePage.add(label3);
-                label3.setBounds(70, 25, 220, label3.getPreferredSize().height);
             }
-            tabbedPane1.addTab("\u9500\u552e\uff08\u672a\u5f00\u53d1\uff09", SalePage);
+            tabbedPane1.addTab("\u9500\u552e\u8ba2\u5355", SalePage);
 
             //======== ProductPage ========
             {
@@ -327,7 +328,6 @@ public class MainGUI extends JFrame {
                     //---- StockTable ----
                     StockTable.setModel(new DefaultTableModel(
                         new Object[][] {
-                            {null, null, null, null, null},
                         },
                         new String[] {
                             "\u5e93\u5b58\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u5165\u5e93\u6570\u91cf", "\u5165\u5e93\u65f6\u95f4"
@@ -430,7 +430,6 @@ public class MainGUI extends JFrame {
     private JButton SaleSearch;
     private JButton SaleAdd;
     private JButton SaleDelete;
-    private JLabel label3;
     private JPanel ProductPage;
     private JScrollPane ProductScrollPane;
     private JTable ProductTable;

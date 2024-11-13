@@ -44,30 +44,34 @@ new FormModel {
 						name: "SaleScrollPane"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "SaleTable"
-							"model": &SwingTableModel0 new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
-								add( "商品编号" )
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+								add( "订单编号" )
 								add( "商品名称" )
 								add( "类别" )
-								add( "价格" )
-								add( "库存量" )
+								add( "单价" )
+								add( "销售数量" )
+								add( "销售时间" )
 							}, new java.util.Vector {
 								add( null )
 								add( null )
 								add( null )
 								add( null )
 								add( null )
+								add( null )
 							}, new java.util.Vector {
 								add( false )
 								add( false )
 								add( false )
 								add( false )
 								add( false )
+								add( null )
 							}, new java.util.Vector {
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 80, true ) )
 								add( null )
 								add( null )
-								add( null )
-								add( null )
-								add( null )
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 80, true ) )
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 80, true ) )
+								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 150, 0, true ) )
 							} )
 							"font": &Font0 new java.awt.Font( "楷体", 0, 18 )
 							"autoResizeMode": 4
@@ -136,17 +140,8 @@ new FormModel {
 						"x": 785
 						"y": 180
 					} )
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "label3"
-						"text": "尚未开发"
-						"font": new java.awt.Font( "Microsoft YaHei UI", 0, 28 )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 70
-						"y": 25
-						"width": 220
-					} )
 				}, new FormLayoutConstraints( null ) {
-					"title": "销售（未开发）"
+					"title": "销售订单"
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) {
 					"autoSize": false
@@ -156,7 +151,31 @@ new FormModel {
 						name: "ProductScrollPane"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "ProductTable"
-							"model": #SwingTableModel0
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+								add( "商品编号" )
+								add( "商品名称" )
+								add( "类别" )
+								add( "价格" )
+								add( "库存量" )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							}, new java.util.Vector {
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+								add( false )
+							}, new java.util.Vector {
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
 							"font": #Font0
 							"autoResizeMode": 4
 							"autoCreateRowSorter": true
@@ -230,15 +249,7 @@ new FormModel {
 						name: "StockScrollPane"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "StockTable"
-							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
-								add( new java.util.Vector {
-									add( null )
-									add( null )
-									add( null )
-									add( null )
-									add( null )
-								} )
-							}, new java.util.Vector {
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
 								add( "库存编号" )
 								add( "商品名称" )
 								add( "类别" )

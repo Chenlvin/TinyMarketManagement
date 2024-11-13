@@ -1,5 +1,6 @@
 package stu.sll.main.database.operations;
 
+import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
 import java.sql.*;
@@ -15,6 +16,7 @@ import java.sql.*;
 public class DBLogin {
     public static boolean dbLogin(String username, String password) throws SQLException {
         try {
+            LogUtil.info("查询登录用户名与密码");
             String query = "SELECT COUNT(*) FROM user WHERE Username = ? AND Password = ?";
             Connection conn = SQLConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement(query);

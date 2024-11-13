@@ -24,6 +24,7 @@ public class SearchProduct {
         String query;
 
         if (searchType.equals("名称")) {
+            LogUtil.info("执行商品列表查询（按名称）");
             query = "SELECT p.Pid, p.Product_Name, t.Type_Name, p.Price, p.Stock_Left " +
                     "FROM Product p " +
                     "LEFT JOIN Stock s ON p.Pid = s.Pid " +
@@ -31,6 +32,7 @@ public class SearchProduct {
                     "WHERE p.Product_name LIKE ? " +
                     "GROUP BY p.Pid";
         } else { // "类别"
+            LogUtil.info("执行商品列表查询（按类别）");
             query = "SELECT p.Pid, p.Product_name, t.Type_name, p.Price, p.Stock_Left " +
                     "FROM Product p " +
                     "LEFT JOIN Stock s ON p.Pid = s.Pid " +
@@ -52,7 +54,7 @@ public class SearchProduct {
                 productList.add(new Object[]{productId, productName, typeName, price, stockLeft});
             }
         } catch (SQLException ex) {
-            LogUtil.error("Search 时出错：" + ex.getMessage());
+            LogUtil.error("查找出错：" + ex.getMessage());
             new DialogErr("查找时出错，错误信息：" + ex.getMessage());
         }
         return productList;
