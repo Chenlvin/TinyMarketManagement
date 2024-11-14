@@ -6,6 +6,7 @@ package stu.sll.main.view.frame;
 
 import javax.swing.table.*;
 
+import stu.sll.main.common.constants.SysConstant;
 import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.service.StopService;
 import stu.sll.main.common.uiEvent.product.*;
@@ -25,6 +26,7 @@ public class MainGUI extends JFrame {
     public MainGUI() {
         LogUtil.info("启动主界面 MainGUI");
         initComponents();
+        setTitle("Market Management " + SysConstant.VERSION);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setResizable(false);
         ProductTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -187,13 +189,14 @@ public class MainGUI extends JFrame {
                     //---- SaleTable ----
                     SaleTable.setModel(new DefaultTableModel(
                         new Object[][] {
+                            {null, null, null, null, null, null},
                         },
                         new String[] {
                             "\u8ba2\u5355\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u5355\u4ef7", "\u9500\u552e\u6570\u91cf", "\u9500\u552e\u65f6\u95f4"
                         }
                     ) {
                         boolean[] columnEditable = new boolean[] {
-                            false, false, false, false, false, true
+                            false, false, false, false, false, false
                         };
                         @Override
                         public boolean isCellEditable(int rowIndex, int columnIndex) {

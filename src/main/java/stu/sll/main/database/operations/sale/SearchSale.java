@@ -24,21 +24,21 @@ public class SearchSale {
         String query;
 
         if (searchType.equals("名称")) {
-            LogUtil.info("执行销售订单查询（按名称）");
+            LogUtil.info("执行销售订单查询（按名称）, Keyword=" + keyword);
             query = "SELECT s.Sale_id, p.Product_Name, t.Type_Name, p.price, s.Sale_quantity, s.Sale_time " +
                     "FROM sale s " +
                     "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
-                    "WHERE p.Product_name LIKE ? " +
+                    "WHERE p.Product_Name LIKE ? " +
                     "GROUP BY p.Pid";
 
         } else { // "类别"
-            LogUtil.info("执行销售订单查询（按类别）");
+            LogUtil.info("执行销售订单查询（按类别）, Keyword=" + keyword);
             query = "SELECT s.Sale_id, p.Product_Name, t.Type_name, p.price, s.Sale_quantity, s.Sale_time " +
                     "FROM sale s " +
                     "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
-                    "WHERE t.Type_name LIKE ? " +
+                    "WHERE t.Type_Name LIKE ? " +
                     "GROUP BY p.Pid";
         }
 

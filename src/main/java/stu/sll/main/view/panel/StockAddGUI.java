@@ -6,21 +6,15 @@ package stu.sll.main.view.panel;
 
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.dialog.DialogMsg;
-import stu.sll.main.common.uiEvent.product.ProductSearch;
-import stu.sll.main.common.uiEvent.stock.StockAdd;
 import stu.sll.main.common.uiEvent.stock.StockSearch;
 import stu.sll.main.common.util.LogUtil;
-import stu.sll.main.database.operations.product.AddProduct;
 import stu.sll.main.database.operations.stock.AddStock;
-import stu.sll.main.view.dialog.ErrorDialogGUI;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-import javax.swing.border.*;
 
 /**
  * @author Zhou Chenlvin
@@ -56,8 +50,7 @@ public class StockAddGUI extends JFrame {
                 new DialogMsg("提示", "添加成功");
             }
         } catch (Exception ex) {
-            ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI("添加商品时出错：" + ex.getMessage());
-            errorDialogGUI.setVisible(true);
+            new DialogErr("添加入库信息时出错：" + ex.getMessage());
         }
     }
 

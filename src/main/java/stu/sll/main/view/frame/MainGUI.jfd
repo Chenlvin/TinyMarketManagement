@@ -44,7 +44,16 @@ new FormModel {
 						name: "SaleScrollPane"
 						add( new FormComponent( "javax.swing.JTable" ) {
 							name: "SaleTable"
-							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+							"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+								add( new java.util.Vector {
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+									add( null )
+								} )
+							}, new java.util.Vector {
 								add( "订单编号" )
 								add( "商品名称" )
 								add( "类别" )
@@ -64,7 +73,7 @@ new FormModel {
 								add( false )
 								add( false )
 								add( false )
-								add( null )
+								add( false )
 							}, new java.util.Vector {
 								add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 80, true ) )
 								add( null )

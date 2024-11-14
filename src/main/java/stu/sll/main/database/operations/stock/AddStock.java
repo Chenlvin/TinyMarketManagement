@@ -10,37 +10,45 @@ import java.sql.*;
  * @BelongsPackage: main.database.operations.stock
  * @Author: ZhouChenyi
  * @Description: Add Stock
- * @Version: 1.0
  */
 
 public class AddStock {
     public static boolean addStock(int pid, int quantity, Timestamp datetime) throws SQLException {
-        String query0 = "ALTER TABLE stock AUTO_INCREMENT=0";
+        LogUtil.info("开始执行入库信息添加操作, pid=" + pid + ", quantity=" + quantity + ", datetime=" + datetime);
         String query = "INSERT INTO stock (Pid, Stock_quantity, Stock_time) VALUES (?, ?, ?)";
         String queryToProduct = "UPDATE product set Stock_Left=Stock_Left+? WHERE Pid=?";
 
-        try (Connection connection = SQLConnection.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(query);
-             PreparedStatement stmt2 = connection.prepareStatement(query0);
-             PreparedStatement stmt_to_product = connection.prepareStatement(queryToProduct)) {
-            stmt2.executeUpdate();
+        try (Connection connection = SQLConnection.getConnection()) {
+            connection.setAutoCommit(false);
 
-            stmt_to_product.setInt(1,quantity);
-            stmt_to_product.setInt(2,pid);
+            try (PreparedStatement stmt = connection.prepareStatement(query);
+                 PreparedStatement stmt_to_product = connection.prepareStatement(queryToProduct)) {
 
-            stmt.setInt(1, pid);
-            stmt.setInt(2, quantity);
-            stmt.setTimestamp(3, datetime);
-            int rowsAffected = stmt.executeUpdate();
-            if (rowsAffected > 0) {
-                stmt_to_product.executeUpdate();
-                LogUtil.info("成功添加入库信息");
-                return true;
-            } else {
-                throw new SQLException("0 条数据受影响");
+                stmt.setInt(1, pid);
+                stmt.setInt(2, quantity);
+                stmt.setTimestamp(3, datetime);
+                int rowsAffected = stmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    // 更新商品库存
+                    stmt_to_product.setInt(1, quantity);
+                    stmt_to_product.setInt(2, pid);
+                    stmt_to_product.executeUpdate();
+
+                    // 提交事务
+                    connection.commit();
+                    LogUtil.info("成功添加入库信息");
+                    return true;
+                } else {
+                    throw new SQLException("没有插入任何库存数据");
+                }
+            } catch (SQLException ex) {
+                connection.rollback();
+                LogUtil.error("添加入库信息时出错：" + ex.getMessage());
+                throw new SQLException(ex.getMessage());
             }
         } catch (SQLException ex) {
-            LogUtil.error("添加入库信息时出错：" + ex.getMessage());
+            LogUtil.error(ex.getMessage());
             throw new SQLException(ex.getMessage());
         }
     }

@@ -4,7 +4,7 @@
 
 package stu.sll.main.view.panel;
 
-import stu.sll.main.sys.SysConstant;
+import stu.sll.main.common.constants.SysConstant;
 
 import java.awt.*;
 import javax.swing.*;
@@ -16,7 +16,7 @@ public class AboutGUI extends JFrame {
     public AboutGUI() {
         initComponents();
         setResizable(false);
-        version.setText("Version:" + VERSION);
+        version.setText("Version: " + VERSION);
         description.setText(DESCRIPTION);
     }
     private final String VERSION = SysConstant.VERSION + "(" + SysConstant.VER_NUM + ")";

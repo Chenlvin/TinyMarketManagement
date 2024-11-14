@@ -3,7 +3,6 @@ package stu.sll.main.database.operations.stock;
 import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
-import stu.sll.main.view.dialog.ErrorDialogGUI;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,19 +25,19 @@ public class SearchStock {
 
         // 根据商品名称或类别查询库存信息
         if (searchType.equals("商品名称")) {
-            LogUtil.info("执行入库信息查询（按名称）");
+            LogUtil.info("执行入库信息查询（按名称）, Keyword=" + keyword);
             query = "SELECT s.Stock_id, p.Product_name, t.Type_name, s.Stock_quantity, s.Stock_time " +
                     "FROM stock s " +
                     "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
                     "WHERE p.Product_name LIKE ?";
         } else { // "商品类别"
-            LogUtil.info("执行入库信息查询（按类别）");
+            LogUtil.info("执行入库信息查询（按类别）, Keyword=" + keyword);
             query = "SELECT s.Stock_id, p.Product_name, t.Type_name, s.Stock_quantity, s.Stock_time " +
                     "FROM stock s " +
                     "LEFT JOIN product p ON s.Pid = p.Pid " +
                     "LEFT JOIN type t ON p.Type = t.Type_id " +
-                    "WHERE t.Type_id LIKE ?";
+                    "WHERE t.Type_Name LIKE ?";
         }
 
         try (PreparedStatement stmt = SQLConnection.getConnection().prepareStatement(query)) {

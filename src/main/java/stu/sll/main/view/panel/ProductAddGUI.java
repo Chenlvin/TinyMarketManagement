@@ -9,7 +9,6 @@ import stu.sll.main.common.dialog.DialogMsg;
 import stu.sll.main.common.uiEvent.product.ProductSearch;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;
-import stu.sll.main.view.dialog.ErrorDialogGUI;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -49,8 +48,7 @@ public class ProductAddGUI extends JFrame {
 
             }
         } catch (Exception ex) {
-            ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI("添加商品时出错：" + ex.getMessage());
-            errorDialogGUI.setVisible(true);
+            new DialogErr("添加商品时出错：" + ex.getMessage());
         }
     }
 

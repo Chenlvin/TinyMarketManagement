@@ -5,10 +5,10 @@
 package stu.sll.main.view.frame;
 
 import stu.sll.main.common.constants.LoginConstant;
+import stu.sll.main.common.dialog.DialogErr;
 import stu.sll.main.common.login.Login;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.DBLogin;
-import stu.sll.main.view.dialog.ErrorDialogGUI;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -37,12 +37,10 @@ public class LoginGUI extends JFrame {
                 Login.setIsLogged(true);
                 this.setVisible(false);
             } else {
-                ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI("登录失败：用户名或密码不正确。");
-                errorDialogGUI.setVisible(true);
+                new DialogErr("登录失败：用户名或密码不正确。");
             }
         } catch (SQLException ex) {
-            ErrorDialogGUI errorDialogGUI = new ErrorDialogGUI(ex.getMessage());
-            errorDialogGUI.setVisible(true);
+            new DialogErr(ex.getMessage());
         }
     }
 

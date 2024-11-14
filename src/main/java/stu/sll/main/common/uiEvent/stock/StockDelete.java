@@ -22,8 +22,11 @@ public class StockDelete {
         } else {
             // 删除操作
             int selectedSid = (int) StockTable.getValueAt(row, 0);
+            String selectedPName = (String) StockTable.getValueAt(row, 1);
+            int quantity = (int) StockTable.getValueAt(row, 3);
+
             try {
-                DeleteStock.deleteStock(selectedSid);
+                DeleteStock.deleteStock(selectedSid,selectedPName,quantity);
                 new StockSearch("名称", "", StockTable);
             } catch (SQLException ex) {
                 new DialogErr(ex.getMessage());
