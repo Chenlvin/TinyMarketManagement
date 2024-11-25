@@ -4,8 +4,8 @@
 
 package stu.sll.main.view.panel;
 
-import stu.sll.main.common.dialog.DialogErr;
-import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.DialogErr;
+import stu.sll.main.common.util.DialogMsg;
 import stu.sll.main.common.uiEvent.stock.StockSearch;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.stock.AddStock;
@@ -13,21 +13,20 @@ import stu.sll.main.database.operations.stock.AddStock;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import javax.swing.*;
+
+import static stu.sll.main.common.constants.Constant.dateFormat;
 
 /**
  * @author Zhou Chenlvin
  */
 public class StockAddGUI extends JFrame {
-    // 定义时间格式
-    SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     JTable StockTable;
 
     public StockAddGUI(JTable StockTable) {
         initComponents();
         this.StockTable = StockTable;
-        String currentTime = dateformat.format(new Timestamp(System.currentTimeMillis()));
+        String currentTime = dateFormat.format(new Timestamp(System.currentTimeMillis()));
         textfield_datetime.setText(currentTime);
     }
 
@@ -56,7 +55,7 @@ public class StockAddGUI extends JFrame {
 
     private void GetTime(ActionEvent e) {
         // 获取当前时间，并填入对应 textfield
-        String currentTime = dateformat.format(new Timestamp(System.currentTimeMillis()));
+        String currentTime = dateFormat.format(new Timestamp(System.currentTimeMillis()));
         textfield_datetime.setText(currentTime);
     }
 

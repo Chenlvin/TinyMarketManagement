@@ -1,6 +1,6 @@
 package stu.sll.main.database.operations.product;
 
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database.operations
- * @Author: ZhouChenyi
- * @Description: Search Product
+ * @Title: SearchProduct
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.product
+ * @Description: Search product in database
  */
 
 public class SearchProduct {

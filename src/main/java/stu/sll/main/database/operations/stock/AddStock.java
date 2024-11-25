@@ -6,10 +6,10 @@ import stu.sll.main.database.connection.SQLConnection;
 import java.sql.*;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: main.database.operations.stock
- * @Author: ZhouChenyi
- * @Description: Add Stock
+ * @Title: AddStock
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.stock
+ * @Description: Add stock in database
  */
 
 public class AddStock {

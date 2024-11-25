@@ -7,10 +7,10 @@ import stu.sll.main.common.util.LogUtil;
 import javax.swing.*;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.theme
- * @Author: ZhouChenyi
- * @Description: Theme / 主题设置
+ * @Title: SetTheme
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.theme
+ * @Description: Set theme
  */
 
 public class SetTheme {
@@ -22,12 +22,12 @@ public class SetTheme {
     public void InitTheme(int code) throws Exception {
         try {
             switch(code) {
-                case 0:
+                case 0: // Light
                     FlatIntelliJLaf.setup();
                     LogUtil.info("Setup theme - FlatIntelliJLaf");
                     UIManager.setLookAndFeel(new FlatIntelliJLaf());
                     break;
-                case 1:
+                case 1: // Dark
                     FlatDarkLaf.setup();
                     LogUtil.info("Setup theme - FlatDarkLaf");
                     UIManager.setLookAndFeel(new FlatDarkLaf());

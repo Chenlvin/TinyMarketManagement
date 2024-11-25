@@ -6,10 +6,10 @@ import stu.sll.main.database.connection.SQLConnection;
 import java.sql.*;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database.operations
- * @Author: ZhouChenyi
- * @Description: Login - Database operation
+ * @Title: DBLogin
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations
+ * @Description: Login in datebase
  */
 
 public class DBLogin {

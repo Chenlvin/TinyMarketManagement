@@ -1,13 +1,13 @@
 package stu.sll.main.common.service;
 
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.util.LogUtil;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.service
- * @Author: ZhouChenyi
- * @Description: 关闭程序
+ * @Title: StopService
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.service
+ * @Description: Stop main service and exit
  */
 
 public class StopService {

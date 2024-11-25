@@ -5,7 +5,7 @@
 package stu.sll.main.view.frame;
 
 import stu.sll.main.common.constants.LoginConstant;
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.login.Login;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.DBLogin;

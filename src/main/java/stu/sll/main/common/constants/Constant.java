@@ -1,21 +1,16 @@
 package stu.sll.main.common.constants;
 
+import java.text.SimpleDateFormat;
+
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.constant
- * @Author: ZhouChenyi
+ * @Title: Constant
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.constants
  * @Description: Constant
  */
 
 public class Constant {
-    private static String SETTINGS_FILE_NAME = "settings.properties";
+    public static String SETTINGS_FILE_NAME = "settings.properties";
 
-
-    public static String getSettingsFileName() {
-        return SETTINGS_FILE_NAME;
-    }
-
-
-
-
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 }

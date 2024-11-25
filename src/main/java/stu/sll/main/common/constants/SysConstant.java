@@ -1,14 +1,14 @@
 package stu.sll.main.common.constants;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.sys
- * @Author: ZhouChenyi
- * @Description: System Constants
+ * @Title: SysConstant
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.constants
+ * @Description: Constant for system
  */
 
 public class SysConstant {
-    public final static String VERSION = "0.2.5";
-    public final static int VER_NUM = 10025;
-    public final static String DESCRIPTION = "开发版本，更多功能持续更新中";
+    public final static String VERSION = "0.2.6";
+    public final static int VER_NUM = 10026;
+    public final static String DESCRIPTION = "Dev 版本，更多功能敬请期待。";
 }

@@ -1,6 +1,6 @@
 package stu.sll.main.database.operations.product;
 
-import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.DialogMsg;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
@@ -9,10 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database.operations
- * @Author: ZhouChenyi
- * @Description: Delete Product
+ * @Title: DeleteProduct
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.product
+ * @Description: Delete product in database
  */
 
 public class DeleteProduct {

@@ -1,6 +1,6 @@
 package stu.sll.main.database.operations.sale;
 
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
@@ -13,9 +13,9 @@ import java.util.List;
 
 /**
  * @Title: SearchSale
- * @Author Chenlvin
- * @Package stu.sll.main.database.operations.sale
- * @description: Search Sale
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.sale
+ * @Description: Search sale in database
  */
 
 public class SearchSale {

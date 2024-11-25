@@ -4,20 +4,17 @@ import stu.sll.main.common.service.StartService;
 import stu.sll.main.view.frame.MainGUI;
 
 /**
- *  [ Market - Reloaded ]
  *
+ * [ Tiny Market Management ]
  *
- * @BelongsProject: Market
- * @Author: ZhouChenyi
- * @Description: Main Class
+ * @Title: Main
  */
 
 public class Main {
     public static void main(String[] args) throws Exception {
-            if(StartService.StartService() == true) {
+            if(StartService.startService()) {
                 MainGUI mainGui = new MainGUI();
                 mainGui.setVisible(true);
             }
-
         }
 }

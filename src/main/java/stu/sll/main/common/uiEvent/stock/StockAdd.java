@@ -5,10 +5,10 @@ import stu.sll.main.view.panel.StockAddGUI;
 import javax.swing.*;
 
 /**
- * @BelongsProject: MarketManagement
- * @BelongsPackage: stu.sll.main.common.uiEvent.stock
- * @Author: ZhouChenyi
- * @Description: Stock Add
+ * @Title: StockAdd
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.uiEvent.stock
+ * @Description: Add stock
  */
 
 public class StockAdd {

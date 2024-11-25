@@ -5,10 +5,10 @@ import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database.operations
- * @Author: ZhouChenyi
- * @Description: 将List信息添加到JList
+ * @Title: Populate
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.function
+ * @Description: Populate List object content to JTable
  */
 
 public class Populate {

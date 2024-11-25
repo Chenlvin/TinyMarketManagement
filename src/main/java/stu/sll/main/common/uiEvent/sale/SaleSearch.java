@@ -1,6 +1,6 @@
 package stu.sll.main.common.uiEvent.sale;
 
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.function.Populate;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.sale.SearchSale;
@@ -11,10 +11,9 @@ import java.util.List;
 
 /**
  * @Title: SaleSearch
- * @Author Chenlvin
- * @Package stu.sll.main.common.uiEvent.sale
- * @Date 2024/11/11 16:37
- * @description: Sale Search
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.uiEvent.sale
+ * @Description: Search sale by keywords
  */
 
 public class SaleSearch {

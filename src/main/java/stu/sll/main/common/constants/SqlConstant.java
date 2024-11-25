@@ -1,10 +1,10 @@
 package stu.sll.main.common.constants;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.constants
- * @Author: ZhouChenyi
- * @Description: Constant for database / 数据库常量
+ * @Title: SqlConstant
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.constants
+ * @Description: Constant for sql
  */
 
 public class SqlConstant {

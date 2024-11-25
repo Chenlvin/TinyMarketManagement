@@ -5,10 +5,10 @@ import stu.sll.main.view.panel.ProductAddGUI;
 import javax.swing.*;
 
 /**
- * @BelongsProject: MarketManagement
- * @BelongsPackage: stu.sll.main.common.uiEvent.product
- * @Author: ZhouChenyi
- * @Description: TODO
+ * @Title: ProductAdd
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.uiEvent.product
+ * @Description: Add product
  */
 
 public class ProductAdd {

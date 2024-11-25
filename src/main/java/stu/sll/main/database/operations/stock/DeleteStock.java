@@ -1,6 +1,6 @@
 package stu.sll.main.database.operations.stock;
 
-import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.DialogMsg;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.connection.SQLConnection;
 
@@ -9,12 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @BelongsProject: MarketManagement
- * @BelongsPackage: stu.sll.main.database.operations.stock
- * @Author: ZhouChenyi
- * @CreateTime: 2024-11-06  10:49
- * @Description: TODO
- * @Version: 1.0
+ * @Title: DeleteStock
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.stock
+ * @Description: Delete stock in database
  */
 
 public class DeleteStock {

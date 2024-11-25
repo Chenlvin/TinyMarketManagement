@@ -8,10 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database.operations
- * @Author: ZhouChenyi
- * @Description: Add Product to product
+ * @Title: AddProduct
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.operations.product
+ * @Description: Add product in database
  */
 
 public class AddProduct {

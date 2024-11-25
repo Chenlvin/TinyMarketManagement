@@ -1,17 +1,18 @@
 package stu.sll.main.database.connection;
 
-import stu.sll.main.common.constants.ErrorMessage;
+import stu.sll.main.common.constants.Message;
 import stu.sll.main.common.constants.SqlConstant;
 import stu.sll.main.common.util.LogUtil;
 
 import java.sql.*;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.database
- * @Author: ZhouChenyi
- * @Description: 数据库连接
+ * @Title: SQLConnection
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.database.connection
+ * @Description: Datebase connect
  */
+
 
 public class SQLConnection {
     public static boolean databaseConnect() throws SQLException {
@@ -31,7 +32,7 @@ public class SQLConnection {
             return true;
         } catch (SQLException e) {
             LogUtil.error("<Connection> 连接数据库时出错：" + e.getMessage());
-            throw new SQLException(ErrorMessage.SQL_CONNECT_ERROR);
+            throw new SQLException(Message.SQL_CONNECT_ERROR);
         }
     }
 

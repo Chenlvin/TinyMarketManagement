@@ -1,10 +1,10 @@
 package stu.sll.main.properties;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.properties
- * @Author: ZhouChenyi
- * @Description: 创建新的 settings.main.properties
+ * @Title: PropCreate
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.properties
+ * @Description: Create properties
  */
 
 import stu.sll.main.common.util.LogUtil;

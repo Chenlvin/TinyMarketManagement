@@ -7,7 +7,7 @@ package stu.sll.main.view.frame;
 import javax.swing.table.*;
 
 import stu.sll.main.common.constants.SysConstant;
-import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.DialogMsg;
 import stu.sll.main.common.service.StopService;
 import stu.sll.main.common.uiEvent.product.*;
 import stu.sll.main.common.uiEvent.sale.SaleSearch;
@@ -41,8 +41,9 @@ public class MainGUI extends JFrame {
 
     private void ProductAdd(ActionEvent e) { new ProductAdd(ProductTable); }
 
-    private void SettingsMenu(ActionEvent e) {
-        new DialogMsg("提示","Alpha 测试版本，该功能暂未开发！");
+    private void UserManageMenu(ActionEvent e) {
+        UserManageGUI userManageGUI = new UserManageGUI();
+        userManageGUI.setVisible(true);
     }
 
     // 监听窗口关闭按钮
@@ -86,13 +87,19 @@ public class MainGUI extends JFrame {
         // TODO add your code here
     }
 
+    private void SettingsMenu(ActionEvent e) {
+        new DialogMsg("提示","Alpha 测试版本，该功能暂未开发！");
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         menuBar1 = new JMenuBar();
-        menu3 = new JMenu();
+        Menu = new JMenu();
         Settings = new JMenuItem();
         About = new JMenuItem();
+        User = new JMenu();
+        UserManagement = new JMenuItem();
         tabbedPane1 = new JTabbedPane();
         HomePage = new JPanel();
         label1 = new JLabel();
@@ -140,21 +147,32 @@ public class MainGUI extends JFrame {
         //======== menuBar1 ========
         {
 
-            //======== menu3 ========
+            //======== Menu ========
             {
-                menu3.setText("\u83dc\u5355");
+                Menu.setText("\u83dc\u5355");
 
                 //---- Settings ----
                 Settings.setText("\u8bbe\u7f6e");
                 Settings.addActionListener(e -> SettingsMenu(e));
-                menu3.add(Settings);
+                Menu.add(Settings);
 
                 //---- About ----
                 About.setText("\u5173\u4e8e");
                 About.addActionListener(e -> About(e));
-                menu3.add(About);
+                Menu.add(About);
             }
-            menuBar1.add(menu3);
+            menuBar1.add(Menu);
+
+            //======== User ========
+            {
+                User.setText("\u7528\u6237");
+
+                //---- UserManagement ----
+                UserManagement.setText("\u7528\u6237\u7ba1\u7406");
+                UserManagement.addActionListener(e -> UserManageMenu(e));
+                User.add(UserManagement);
+            }
+            menuBar1.add(User);
         }
         setJMenuBar(menuBar1);
 
@@ -189,7 +207,6 @@ public class MainGUI extends JFrame {
                     //---- SaleTable ----
                     SaleTable.setModel(new DefaultTableModel(
                         new Object[][] {
-                            {null, null, null, null, null, null},
                         },
                         new String[] {
                             "\u8ba2\u5355\u7f16\u53f7", "\u5546\u54c1\u540d\u79f0", "\u7c7b\u522b", "\u5355\u4ef7", "\u9500\u552e\u6570\u91cf", "\u9500\u552e\u65f6\u95f4"
@@ -205,8 +222,11 @@ public class MainGUI extends JFrame {
                     });
                     {
                         TableColumnModel cm = SaleTable.getColumnModel();
+                        cm.getColumn(0).setMinWidth(80);
                         cm.getColumn(0).setMaxWidth(80);
+                        cm.getColumn(3).setMinWidth(80);
                         cm.getColumn(3).setMaxWidth(80);
+                        cm.getColumn(4).setMinWidth(80);
                         cm.getColumn(4).setMaxWidth(80);
                         cm.getColumn(5).setMinWidth(150);
                     }
@@ -224,7 +244,7 @@ public class MainGUI extends JFrame {
                 SalePage.add(SaleScrollPane);
                 SaleScrollPane.setBounds(15, 90, 745, 405);
                 SalePage.add(SaleKeyword);
-                SaleKeyword.setBounds(395, 30, 180, 40);
+                SaleKeyword.setBounds(390, 30, 180, 40);
 
                 //---- SaleType ----
                 SaleType.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -232,7 +252,7 @@ public class MainGUI extends JFrame {
                     "\u7c7b\u522b"
                 }));
                 SalePage.add(SaleType);
-                SaleType.setBounds(575, 30, 78, 40);
+                SaleType.setBounds(570, 30, 100, 40);
 
                 //---- SaleSearch ----
                 SaleSearch.setText("\u67e5\u8be2");
@@ -277,6 +297,15 @@ public class MainGUI extends JFrame {
                             return columnEditable[columnIndex];
                         }
                     });
+                    {
+                        TableColumnModel cm = ProductTable.getColumnModel();
+                        cm.getColumn(0).setMinWidth(100);
+                        cm.getColumn(0).setMaxWidth(100);
+                        cm.getColumn(3).setMinWidth(100);
+                        cm.getColumn(3).setMaxWidth(100);
+                        cm.getColumn(4).setMinWidth(100);
+                        cm.getColumn(4).setMaxWidth(100);
+                    }
                     ProductTable.setFont(new Font("\u6977\u4f53", Font.PLAIN, 18));
                     ProductTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
                     ProductTable.setAutoCreateRowSorter(true);
@@ -291,7 +320,7 @@ public class MainGUI extends JFrame {
                 ProductPage.add(ProductScrollPane);
                 ProductScrollPane.setBounds(15, 90, 745, 405);
                 ProductPage.add(ProductKeyword);
-                ProductKeyword.setBounds(395, 30, 180, 40);
+                ProductKeyword.setBounds(390, 30, 180, 40);
 
                 //---- ProductType ----
                 ProductType.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -299,7 +328,7 @@ public class MainGUI extends JFrame {
                     "\u7c7b\u522b"
                 }));
                 ProductPage.add(ProductType);
-                ProductType.setBounds(575, 30, ProductType.getPreferredSize().width, 40);
+                ProductType.setBounds(570, 30, 100, 40);
 
                 //---- ProductSearch ----
                 ProductSearch.setText("\u67e5\u8be2");
@@ -346,7 +375,9 @@ public class MainGUI extends JFrame {
                     });
                     {
                         TableColumnModel cm = StockTable.getColumnModel();
+                        cm.getColumn(0).setMinWidth(100);
                         cm.getColumn(0).setMaxWidth(100);
+                        cm.getColumn(3).setMinWidth(100);
                         cm.getColumn(3).setMaxWidth(100);
                         cm.getColumn(4).setMinWidth(200);
                     }
@@ -364,7 +395,7 @@ public class MainGUI extends JFrame {
                 StockPage.add(StockScrollPane);
                 StockScrollPane.setBounds(15, 90, 745, 405);
                 StockPage.add(StockKeyword);
-                StockKeyword.setBounds(365, 30, 180, 40);
+                StockKeyword.setBounds(390, 30, 180, 40);
 
                 //---- StockType ----
                 StockType.setModel(new DefaultComboBoxModel<>(new String[] {
@@ -372,7 +403,7 @@ public class MainGUI extends JFrame {
                     "\u5206\u7c7b"
                 }));
                 StockPage.add(StockType);
-                StockType.setBounds(545, 30, 108, 40);
+                StockType.setBounds(570, 30, 100, 40);
 
                 //---- StockSearch ----
                 StockSearch.setText("\u67e5\u8be2");
@@ -418,9 +449,11 @@ public class MainGUI extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     private JMenuBar menuBar1;
-    private JMenu menu3;
+    private JMenu Menu;
     private JMenuItem Settings;
     private JMenuItem About;
+    private JMenu User;
+    private JMenuItem UserManagement;
     private JTabbedPane tabbedPane1;
     private JPanel HomePage;
     private JLabel label1;

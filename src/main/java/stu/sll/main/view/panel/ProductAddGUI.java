@@ -4,8 +4,8 @@
 
 package stu.sll.main.view.panel;
 
-import stu.sll.main.common.dialog.DialogErr;
-import stu.sll.main.common.dialog.DialogMsg;
+import stu.sll.main.common.util.DialogErr;
+import stu.sll.main.common.util.DialogMsg;
 import stu.sll.main.common.uiEvent.product.ProductSearch;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.AddProduct;

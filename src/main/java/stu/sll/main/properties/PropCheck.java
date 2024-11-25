@@ -1,20 +1,21 @@
 package stu.sll.main.properties;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.properties
- * @Author: ZhouChenyi
- * @Description: 检查 settings.main.properties 是否存在
+ * @Title: PropCheck
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.properties
+ * @Description: Check properties
  */
 
-import stu.sll.main.common.constants.Constant;
 import stu.sll.main.common.util.LogUtil;
 
 import java.io.File;
 
+import static stu.sll.main.common.constants.Constant.SETTINGS_FILE_NAME;
+
 public class PropCheck {
     public static boolean PropCheck() {
-        String fileName = Constant.getSettingsFileName();
+        String fileName = SETTINGS_FILE_NAME;
         File propertiesFile = new File(fileName);
 
         if (propertiesFile.exists()) {

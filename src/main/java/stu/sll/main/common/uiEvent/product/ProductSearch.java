@@ -1,6 +1,6 @@
 package stu.sll.main.common.uiEvent.product;
 
-import stu.sll.main.common.dialog.DialogErr;
+import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.function.Populate;
 import stu.sll.main.common.util.LogUtil;
 import stu.sll.main.database.operations.product.SearchProduct;
@@ -10,10 +10,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.uiEvent.product
- * @Author: ZhouChenyi
- * @Description: Product Search
+ * @Title: ProductSearch
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.uiEvent.product
+ * @Description: Search product by keywords
  */
 
 public class ProductSearch {

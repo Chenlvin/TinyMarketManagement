@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.properties
- * @Author: ZhouChenyi
- * @Description: Properties Operation
+ * @Title: PropOp
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.properties
+ * @Description: Properties operations
  */
 
 public class PropOp {

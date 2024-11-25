@@ -3,11 +3,12 @@ package stu.sll.main.common.util;
 import org.apache.log4j.Logger;
 
 /**
- * @BelongsProject: MarketManagement
- * @BelongsPackage: stu.sll.main.common.util
- * @Author: ZhouChenyi
- * @Description: LogUtil
+ * @Title: LogUtil
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.util
+ * @Description: Utils for log
  */
+
 
 public class LogUtil {
     public static void trace(String msg) {

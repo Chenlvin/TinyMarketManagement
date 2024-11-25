@@ -3,10 +3,10 @@ package stu.sll.main.common.login;
 import stu.sll.main.view.frame.LoginGUI;
 
 /**
- * @BelongsProject: Market
- * @BelongsPackage: stu.sll.main.common.login
- * @Author: ZhouChenyi
- * @Description: Login / 登录功能
+ * @Title: Login
+ * @Author: Chenlvin
+ * @Package: stu.sll.main.common.login
+ * @Description: Login Function
  */
 
 public class Login {
