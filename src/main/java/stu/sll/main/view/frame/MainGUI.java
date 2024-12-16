@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Fri Nov 01 10:57:28 CST 2024
- */
-
 package stu.sll.main.view.frame;
 
 import javax.swing.table.*;
@@ -58,7 +54,7 @@ public class MainGUI extends JFrame {
     }
 
     private void thisWindowClosed(WindowEvent e) {
-        new StopService();
+        StopService.stopService();
     }
 
     private void ProductDelete(ActionEvent e) {

@@ -25,7 +25,7 @@ public class StartService {
             Loading loadDialog = new Loading("正在连接数据库...");
             loadDialog.setVisible(true);
             // 主题设置
-            new SetTheme(0);
+            SetTheme.setTheme(1);
             boolean propcheck = PropCheck.PropCheck();
             boolean sqlconnection = SQLConnection.databaseConnect();
 

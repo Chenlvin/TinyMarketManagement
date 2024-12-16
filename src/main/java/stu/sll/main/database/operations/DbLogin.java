@@ -6,13 +6,13 @@ import stu.sll.main.database.connection.SQLConnection;
 import java.sql.*;
 
 /**
- * @Title: DBLogin
+ * @Title: DbLogin
  * @Author: Chenlvin
  * @Package: stu.sll.main.database.operations
- * @Description: Login in datebase
+ * @Description: Login in database
  */
 
-public class DBLogin {
+public class DbLogin {
     public static boolean dbLogin(String username, String password) throws SQLException {
         try {
             LogUtil.info("查询登录用户名与密码");

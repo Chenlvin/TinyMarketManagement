@@ -11,7 +11,7 @@ import stu.sll.main.common.util.LogUtil;
  */
 
 public class StopService {
-    public StopService() {
+    public static void stopService() {
         LogUtil.info("监听到 MainGUI 窗口关闭，正在停止服务");
         try {
             System.exit(0);

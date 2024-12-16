@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 
 public class DeleteStock {
-    public static void deleteStock(int sid, String PName, int quantity) throws SQLException {
+    public static boolean deleteStock(int sid, String PName, int quantity) throws SQLException {
         LogUtil.info("开始执行入库信息删除操作，Sid=" + sid);
         String queryStock = "DELETE FROM stock WHERE Stock_id = ?";
         String queryProduct = "UPDATE product SET Stock_left = Stock_left - ? WHERE Product_Name = ?";
@@ -37,11 +37,11 @@ public class DeleteStock {
 
                     connection.commit();
                     LogUtil.info("成功删除入库信息: Stock_id=" + sid);
-                    new DialogMsg("提示", "删除成功");
+                    return true;
                 } else {
                     connection.rollback();
                     LogUtil.info("未能找到要删除的商品");
-                    new DialogMsg("提示", "未能找到该商品，请刷新商品列表。");
+                    return false;
                 }
             } catch (SQLException ex) {
                 throw new SQLException(ex.getMessage());

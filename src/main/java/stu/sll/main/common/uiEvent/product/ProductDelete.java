@@ -26,7 +26,9 @@ public class ProductDelete {
                 // 点击确认，执行删除操作
                 int selectedPid = (int) ProductTable.getValueAt(row, 0);
                 try {
-                    DeleteProduct.deleteProduct(selectedPid);
+                    boolean succ = DeleteProduct.deleteProduct(selectedPid);
+                    if(succ) { new DialogMsg("提示","删除成功"); }
+                    else { new DialogMsg("提示","未能找到该商品，请刷新商品列表。"); }
                     new ProductSearch("名称", "", ProductTable);
                 } catch (SQLException ex) {
                     new DialogErr(ex.getMessage());

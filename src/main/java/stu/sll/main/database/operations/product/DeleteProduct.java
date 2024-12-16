@@ -16,7 +16,7 @@ import java.sql.SQLException;
  */
 
 public class DeleteProduct {
-    public static void deleteProduct(int pid) throws SQLException {
+    public static boolean deleteProduct(int pid) throws SQLException {
         LogUtil.info("开始执行删除操作，pid=" + pid);
         String query = "DELETE FROM Product WHERE Pid = ?";
 
@@ -27,10 +27,10 @@ public class DeleteProduct {
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 LogUtil.info("商品删除成功");
-                new DialogMsg("提示","删除成功");
+                return true;
             } else {
                 LogUtil.info("未能找到要删除的商品");
-                new DialogMsg("提示","未能找到该商品，请刷新商品列表。");
+                return false;
             }
         } catch (SQLException ex) {
             LogUtil.error("删除失败：" + ex.getMessage());

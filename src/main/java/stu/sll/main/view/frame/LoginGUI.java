@@ -8,7 +8,7 @@ import stu.sll.main.common.constants.LoginConstant;
 import stu.sll.main.common.util.DialogErr;
 import stu.sll.main.common.login.Login;
 import stu.sll.main.common.util.LogUtil;
-import stu.sll.main.database.operations.DBLogin;
+import stu.sll.main.database.operations.DbLogin;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -30,7 +30,7 @@ public class LoginGUI extends JFrame {
         String username = usernamelabel.getText();
         String password = new String(passwordlabel.getPassword());
         try {
-            if (DBLogin.dbLogin(username, password)) {
+            if (DbLogin.dbLogin(username, password)) {
                 // 登录成功
                 LoginConstant.setUsername(username);
                 LoginConstant.setPassword(password);

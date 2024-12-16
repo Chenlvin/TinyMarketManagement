@@ -28,7 +28,9 @@ public class StockDelete {
                 String selectedPName = (String) StockTable.getValueAt(row, 1);
                 int quantity = (int) StockTable.getValueAt(row, 3);
                 try {
-                    DeleteStock.deleteStock(selectedSid, selectedPName, quantity);
+                    boolean succ = DeleteStock.deleteStock(selectedSid, selectedPName, quantity);
+                    if(succ) { new DialogMsg("提示", "删除成功"); }
+                    else { new DialogMsg("提示", "未能找到该商品，请刷新商品列表。"); }
                     new StockSearch("名称", "", StockTable);
                 } catch (SQLException ex) {
                     new DialogErr(ex.getMessage());

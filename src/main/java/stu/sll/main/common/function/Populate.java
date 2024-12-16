@@ -12,10 +12,10 @@ import java.util.List;
  */
 
 public class Populate {
-    public static void populateTable(List<Object[]> productList, JTable table) {
+    public static void populateTable(List<Object[]> List, JTable table) {
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         model.setRowCount(0); // 清空现有数据
-        for (Object[] product : productList) {
+        for (Object[] product : List) {
             model.addRow(product); // 将每一行数据添加到表格中
         }
     }

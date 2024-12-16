@@ -4,7 +4,7 @@
 
   <groupId>stu.sll</groupId>
   <artifactId>MarketManagement</artifactId>
-  <version>0.2.6-Dev</version>
+  <version>0.3.0-Dev</version>
   <packaging>jar</packaging>
 
   <name>MarketManagement</name>

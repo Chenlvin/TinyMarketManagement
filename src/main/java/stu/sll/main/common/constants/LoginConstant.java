@@ -8,9 +8,12 @@ package stu.sll.main.common.constants;
  */
 
 public class LoginConstant {
+    private enum PERMTYPE {
+        Admin, StockMgr, Saler, ProductMgr
+    }
     private static String Username = "null";
     private static String Password = "null";
-
+    private static final PERMTYPE permType = PERMTYPE.Admin;
     public static String getPassword() {
         return Password;
     }

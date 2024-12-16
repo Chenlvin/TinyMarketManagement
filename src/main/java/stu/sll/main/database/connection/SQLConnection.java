@@ -36,7 +36,7 @@ public class SQLConnection {
         }
     }
 
-    public static void Close(Connection conn, Statement stmt) throws SQLException {
+    public static void close(Connection conn, Statement stmt) throws SQLException {
         try {
             if (stmt != null) {
                 stmt.close(); // 关闭语句

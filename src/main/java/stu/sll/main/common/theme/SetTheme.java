@@ -14,12 +14,12 @@ import javax.swing.*;
  */
 
 public class SetTheme {
-    public SetTheme(int code) throws Exception {
+    public static void setTheme(int code) throws Exception {
         LogUtil.info("开始读取主题设置");
         InitTheme(code);
     }
 
-    public void InitTheme(int code) throws Exception {
+    public static void InitTheme(int code) throws Exception {
         try {
             switch(code) {
                 case 0: // Light
